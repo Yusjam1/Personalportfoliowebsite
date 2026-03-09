@@ -51,4 +51,4 @@ git remote set-url origin https://github.com/Yusjam1/Personalportfoliowebsite.gi
 
 Expected Pages URL:
 
-`https://yusjam1.github.io/Personalportfoliowebsite/`
+https://yusufjamaliweb-livid.vercel.app/
