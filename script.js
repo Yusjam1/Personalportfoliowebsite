@@ -2,6 +2,9 @@ const modeToggle = document.getElementById("mode-toggle");
 const root = document.documentElement;
 const cursorLight = document.querySelector(".cursor-light");
 const toast = document.getElementById("toast");
+const storyScene = document.querySelector("[data-scroll-scene]");
+const storyCaption = document.getElementById("story-caption");
+const storySteps = Array.from(document.querySelectorAll(".story-step"));
 
 const projectList = [
   {
@@ -93,8 +96,19 @@ function renderProjects() {
       const rect = card.getBoundingClientRect();
       const x = ((event.clientX - rect.left) / rect.width) * 100;
       const y = ((event.clientY - rect.top) / rect.height) * 100;
+      const tiltX = ((event.clientX - rect.left) / rect.width - 0.5) * 8;
+      const tiltY = (0.5 - (event.clientY - rect.top) / rect.height) * 8;
       card.style.setProperty("--x", `${x}%`);
       card.style.setProperty("--y", `${y}%`);
+      card.style.setProperty("--tilt-x", tiltX.toFixed(2));
+      card.style.setProperty("--tilt-y", tiltY.toFixed(2));
+      card.style.setProperty("--lift", "8");
+    });
+
+    card.addEventListener("mouseleave", () => {
+      card.style.setProperty("--tilt-x", "0");
+      card.style.setProperty("--tilt-y", "0");
+      card.style.setProperty("--lift", "0");
     });
 
     grid.appendChild(card);
@@ -118,6 +132,39 @@ function showToast(message) {
   window.setTimeout(() => {
     toast.classList.remove("show");
   }, 1400);
+}
+
+function clamp(value, min, max) {
+  return Math.min(Math.max(value, min), max);
+}
+
+function updateStoryScene() {
+  if (!storyScene || !storyCaption || storySteps.length === 0) {
+    return;
+  }
+
+  const rect = storyScene.getBoundingClientRect();
+  const available = Math.max(rect.height - window.innerHeight, 1);
+  const progress = clamp(-rect.top / available, 0, 1);
+  root.style.setProperty("--scene-progress", progress.toFixed(3));
+
+  const stage =
+    progress < 0.34
+      ? 0
+      : progress < 0.68
+        ? 1
+        : 2;
+
+  const captions = [
+    "Start with the parts: finance, systems, and AI thinking.",
+    "Then connect them into one product direction.",
+    "Finally turn that direction into projects people can actually use.",
+  ];
+
+  storyCaption.textContent = captions[stage];
+  storySteps.forEach((step, index) => {
+    step.classList.toggle("is-active", index === stage);
+  });
 }
 
 document.querySelectorAll(".copy-btn").forEach((button) => {
@@ -148,6 +195,10 @@ document
   .querySelectorAll(".reveal-on-scroll")
   .forEach((element) => observer.observe(element));
 
+window.addEventListener("scroll", updateStoryScene, { passive: true });
+window.addEventListener("resize", updateStoryScene);
+
 initializeTheme();
 renderProjects();
 rotateInterests();
+updateStoryScene();
