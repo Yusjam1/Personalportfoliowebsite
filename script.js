@@ -40,7 +40,7 @@ const interests = [
 function initializeTheme() {
   const savedTheme = localStorage.getItem("theme") || "day";
   root.setAttribute("data-theme", savedTheme);
-  modeToggle.textContent = savedTheme === "night" ? "Day Mode" : "Night Mode";
+  modeToggle.textContent = savedTheme === "night" ? "Light View" : "Dark View";
 }
 
 modeToggle.addEventListener("click", () => {
@@ -48,7 +48,7 @@ modeToggle.addEventListener("click", () => {
   const next = current === "day" ? "night" : "day";
   root.setAttribute("data-theme", next);
   localStorage.setItem("theme", next);
-  modeToggle.textContent = next === "night" ? "Day Mode" : "Night Mode";
+  modeToggle.textContent = next === "night" ? "Light View" : "Dark View";
 });
 
 window.addEventListener("mousemove", (event) => {
