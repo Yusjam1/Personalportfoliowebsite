@@ -63,7 +63,7 @@ window.addEventListener("mousemove", (event) => {
   cursorLight.style.top = `${event.clientY}px`;
 });
 
-document.querySelectorAll(".room-item").forEach((item) => {
+document.querySelectorAll(".hero-chip").forEach((item) => {
   item.addEventListener("click", () => {
     const target = item.getAttribute("data-target");
     const section = target ? document.querySelector(target) : null;
@@ -78,11 +78,13 @@ function renderProjects() {
   const grid = document.getElementById("projects-grid");
   grid.innerHTML = "";
 
-  projectList.forEach((project) => {
+  projectList.forEach((project, index) => {
     const card = document.createElement("article");
-    card.className = "panel project-card";
+    card.className = `panel project-card${index === 0 ? " is-featured" : ""}`;
+    const label = index === 0 ? "Featured Build" : `Selected Work ${index}`;
 
     card.innerHTML = `
+      <p class="project-kicker">${label}</p>
       <div class="project-top">
         <span>${project.type}</span>
         <span>${project.year}</span>

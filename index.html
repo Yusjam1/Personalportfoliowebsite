@@ -55,21 +55,30 @@
           </div>
         </div>
 
-        <div class="room-card reveal-on-scroll">
-          <p class="room-title">Interactive Room</p>
-          <p class="room-subtitle">Click objects to jump around the site.</p>
-          <div class="room" id="room-map" aria-label="Interactive room map">
-            <button class="room-item lamp" data-target="#about" type="button">
-              Lamp: About Me
-            </button>
-            <button class="room-item monitor" data-target="#projects" type="button">
-              Monitor: Projects
-            </button>
-            <button class="room-item phone" data-target="#contact" type="button">
-              Phone: Contact
-            </button>
-            <div class="desk"></div>
+        <div class="hero-visual reveal-on-scroll" aria-label="Hero showcase">
+          <div class="hero-aura"></div>
+          <div class="hero-halo"></div>
+          <div class="hero-panel">
+            <p class="hero-panel-label">Current Direction</p>
+            <h3>Designing modern products in FinTech and AI.</h3>
+            <div class="hero-stats">
+              <div>
+                <span>Discipline</span>
+                <strong>CIS + Finance</strong>
+              </div>
+              <div>
+                <span>Focus</span>
+                <strong>Product Systems</strong>
+              </div>
+              <div>
+                <span>Goal</span>
+                <strong>Real-World Utility</strong>
+              </div>
+            </div>
           </div>
+          <button class="hero-chip chip-about" data-target="#about" type="button">About</button>
+          <button class="hero-chip chip-projects" data-target="#projects" type="button">Projects</button>
+          <button class="hero-chip chip-contact" data-target="#contact" type="button">Contact</button>
         </div>
       </section>
 
@@ -164,7 +173,7 @@
           </p>
         </div>
 
-        <div class="projects-grid" id="projects-grid"></div>
+        <div class="projects-stack" id="projects-grid"></div>
       </section>
 
       <section class="content-section reveal-on-scroll" id="contact">
