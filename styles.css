@@ -443,6 +443,12 @@ main {
   color: var(--text);
 }
 
+.footer-links {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
 .grain {
   pointer-events: none;
   position: fixed;
