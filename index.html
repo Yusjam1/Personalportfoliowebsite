@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en" data-theme="day">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Yusuf Jamali | FinTech + AI Portfolio</title>
+    <meta
+      name="description"
+      content="Personal portfolio of Yusuf Jamali, a University of Texas at Dallas freshman studying Computer Information Systems and Finance with interests in FinTech and AI."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Manrope:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="cursor-light" aria-hidden="true"></div>
+
+    <header class="site-header" id="top">
+      <a class="logo" href="#top">YJ</a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="mode-toggle" id="mode-toggle" type="button" aria-label="Toggle theme">
+        Night Mode
+      </button>
+    </header>
+
+    <main>
+      <section class="hero reveal-on-scroll">
+        <div class="hero-copy">
+          <p class="eyebrow">Yusuf Jamali</p>
+          <h1>
+            Freshman at <span>UT Dallas</span><br />
+            building at the edge of <span>FinTech + AI</span>
+          </h1>
+          <p class="hero-text">
+            I study Computer Information Systems and Finance at the University of Texas at
+            Dallas. I enjoy turning ideas into useful tools, especially projects that blend
+            intelligent systems with financial technology.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="#projects">See My Projects</a>
+            <a class="button ghost" href="mailto:Yusuf.jamali@utdallas.edu">Email Me</a>
+          </div>
+          <div class="interest-row" aria-live="polite">
+            Currently exploring:
+            <strong id="interest-text">Machine Learning for Finance</strong>
+          </div>
+        </div>
+
+        <div class="room-card reveal-on-scroll">
+          <p class="room-title">Interactive Room</p>
+          <p class="room-subtitle">Click objects to jump around the site.</p>
+          <div class="room" id="room-map" aria-label="Interactive room map">
+            <button class="room-item lamp" data-target="#about" type="button">
+              Lamp: About Me
+            </button>
+            <button class="room-item monitor" data-target="#projects" type="button">
+              Monitor: Projects
+            </button>
+            <button class="room-item phone" data-target="#contact" type="button">
+              Phone: Contact
+            </button>
+            <div class="desk"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section reveal-on-scroll" id="about">
+        <div class="section-header">
+          <p class="eyebrow">About Me</p>
+          <h2>Systems thinker, builder, and curious student.</h2>
+        </div>
+
+        <div class="about-grid">
+          <article class="panel">
+            <h3>Who I Am</h3>
+            <p>
+              I am a freshman at the University of Texas at Dallas majoring in Computer
+              Information Systems and Finance. My long-term goal is to build products that
+              make financial decisions smarter, faster, and more accessible.
+            </p>
+          </article>
+
+          <article class="panel">
+            <h3>Focus Areas</h3>
+            <ul>
+              <li>Financial modeling tools powered by AI</li>
+              <li>User-friendly analytics dashboards</li>
+              <li>Automation for investment and business workflows</li>
+            </ul>
+          </article>
+
+          <article class="panel">
+            <h3>Right Now</h3>
+            <ul>
+              <li>Learning full-stack web development and data systems</li>
+              <li>Building portfolio projects for FinTech and AI use cases</li>
+              <li>Growing practical skills through hands-on coding</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-section reveal-on-scroll" id="projects">
+        <div class="section-header">
+          <p class="eyebrow">Projects</p>
+          <h2>My build log. Add GitHub links anytime.</h2>
+          <p>
+            Project cards are generated from the list in
+            <code>script.js</code>. Replace sample links with your repo URLs as you ship.
+          </p>
+        </div>
+
+        <div class="projects-grid" id="projects-grid"></div>
+      </section>
+
+      <section class="content-section reveal-on-scroll" id="contact">
+        <div class="section-header">
+          <p class="eyebrow">Contact</p>
+          <h2>Let&apos;s connect.</h2>
+        </div>
+
+        <div class="contact-grid">
+          <article class="panel contact-panel">
+            <h3>Email</h3>
+            <a class="contact-link" href="mailto:Yusuf.jamali@utdallas.edu"
+              >Yusuf.jamali@utdallas.edu</a
+            >
+            <button class="button ghost copy-btn" type="button" data-copy="Yusuf.jamali@utdallas.edu">
+              Copy Email
+            </button>
+          </article>
+
+          <article class="panel contact-panel">
+            <h3>Phone</h3>
+            <a class="contact-link" href="tel:+14245416181">424-541-6181</a>
+            <button class="button ghost copy-btn" type="button" data-copy="424-541-6181">
+              Copy Number
+            </button>
+          </article>
+
+          <article class="panel contact-panel">
+            <h3>GitHub</h3>
+            <a class="contact-link" href="https://github.com/Yusjam1" target="_blank" rel="noreferrer"
+              >github.com/Yusjam1</a
+            >
+            <a
+              class="button"
+              href="https://github.com/Yusjam1/Personalportfoliowebsite.git"
+              target="_blank"
+              rel="noreferrer"
+              >Portfolio Repository</a
+            >
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Copyright (c) 2026 Yusuf Jamali</p>
+      <a href="#top">Back to Top</a>
+    </footer>
+
+    <p class="toast" id="toast" role="status" aria-live="polite"></p>
+
+    <script src="script.js"></script>
+  </body>
+</html>
